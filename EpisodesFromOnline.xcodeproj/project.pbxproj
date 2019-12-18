@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E69FAA523A839EE00D59D60 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FAA423A839EE00D59D60 /* Episodes.swift */; };
+		3E69FAA723A83AA800D59D60 /* EpidsodesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FAA623A83AA800D59D60 /* EpidsodesApiClient.swift */; };
+		3E69FAA923A83D9100D59D60 /* ShowListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FAA823A83D9100D59D60 /* ShowListCell.swift */; };
+		3E69FAAC23A8428200D59D60 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FAAB23A8428200D59D60 /* UIImageView+Extensions.swift */; };
+		3E69FAAE23A8472600D59D60 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FAAD23A8472600D59D60 /* EpisodeViewController.swift */; };
+		3E69FAB023A84B8D00D59D60 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FAAF23A84B8D00D59D60 /* EpisodeCell.swift */; };
+		3E69FAB423A923F600D59D60 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E69FAB323A923F600D59D60 /* EpisodeDetailViewController.swift */; };
 		3E8E1AC323A3D73A00851603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E1AC223A3D73A00851603 /* AppDelegate.swift */; };
 		3E8E1AC523A3D73A00851603 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E1AC423A3D73A00851603 /* SceneDelegate.swift */; };
 		3E8E1AC723A3D73A00851603 /* ShowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E1AC623A3D73A00851603 /* ShowListViewController.swift */; };
@@ -31,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E69FAA423A839EE00D59D60 /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		3E69FAA623A83AA800D59D60 /* EpidsodesApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpidsodesApiClient.swift; sourceTree = "<group>"; };
+		3E69FAA823A83D9100D59D60 /* ShowListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowListCell.swift; path = "Views!/ShowListCell.swift"; sourceTree = SOURCE_ROOT; };
+		3E69FAAB23A8428200D59D60 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		3E69FAAD23A8472600D59D60 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		3E69FAAF23A84B8D00D59D60 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		3E69FAB323A923F600D59D60 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		3E8E1ABF23A3D73A00851603 /* EpisodesFromOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpisodesFromOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E8E1AC223A3D73A00851603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E8E1AC423A3D73A00851603 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E69FAAA23A841F900D59D60 /* Extensions! */ = {
+			isa = PBXGroup;
+			children = (
+				3E69FAAB23A8428200D59D60 /* UIImageView+Extensions.swift */,
+			);
+			path = "Extensions!";
+			sourceTree = "<group>";
+		};
 		3E8E1AB623A3D73A00851603 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +95,7 @@
 				3E8E1AEB23A4261500851603 /* AppError.swift */,
 				3E8E1AF123A438FE00851603 /* Views! */,
 				3E8E1AE423A3DB1700851603 /* Models! */,
+				3E69FAAA23A841F900D59D60 /* Extensions! */,
 				3E8E1AC123A3D73A00851603 /* EpisodesFromOnline */,
 				3E8E1AD823A3D73F00851603 /* EpisodesFromOnlineTests */,
 				3E8E1AC023A3D73A00851603 /* Products */,
@@ -114,6 +137,8 @@
 			children = (
 				3E8E1AE523A3DB5000851603 /* Shows!.swift */,
 				3E8E1AE923A4220F00851603 /* ShowsApiClient.swift */,
+				3E69FAA423A839EE00D59D60 /* Episodes.swift */,
+				3E69FAA623A83AA800D59D60 /* EpidsodesApiClient.swift */,
 			);
 			path = "Models!";
 			sourceTree = "<group>";
@@ -123,6 +148,10 @@
 			children = (
 				3E8E1AC823A3D73A00851603 /* Main.storyboard */,
 				3E8E1AC623A3D73A00851603 /* ShowListViewController.swift */,
+				3E69FAAD23A8472600D59D60 /* EpisodeViewController.swift */,
+				3E69FAB323A923F600D59D60 /* EpisodeDetailViewController.swift */,
+				3E69FAA823A83D9100D59D60 /* ShowListCell.swift */,
+				3E69FAAF23A84B8D00D59D60 /* EpisodeCell.swift */,
 			);
 			path = "Views!";
 			sourceTree = "<group>";
@@ -230,11 +259,18 @@
 			files = (
 				3E8E1AEE23A4263D00851603 /* NetworkHelper.swift in Sources */,
 				3E8E1AE623A3DB5000851603 /* Shows!.swift in Sources */,
+				3E69FAAC23A8428200D59D60 /* UIImageView+Extensions.swift in Sources */,
+				3E69FAA923A83D9100D59D60 /* ShowListCell.swift in Sources */,
 				3E8E1AEA23A4220F00851603 /* ShowsApiClient.swift in Sources */,
+				3E69FAA723A83AA800D59D60 /* EpidsodesApiClient.swift in Sources */,
 				3E8E1AEC23A4261500851603 /* AppError.swift in Sources */,
 				3E8E1AC723A3D73A00851603 /* ShowListViewController.swift in Sources */,
+				3E69FAA523A839EE00D59D60 /* Episodes.swift in Sources */,
+				3E69FAB423A923F600D59D60 /* EpisodeDetailViewController.swift in Sources */,
 				3E8E1AC323A3D73A00851603 /* AppDelegate.swift in Sources */,
+				3E69FAAE23A8472600D59D60 /* EpisodeViewController.swift in Sources */,
 				3E8E1AC523A3D73A00851603 /* SceneDelegate.swift in Sources */,
+				3E69FAB023A84B8D00D59D60 /* EpisodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

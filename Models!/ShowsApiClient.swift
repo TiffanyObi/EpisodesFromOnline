@@ -10,13 +10,11 @@ import Foundation
 
 struct ShowsApiClient {
     
-    static func getShows(completion: @escaping (Result<[Show],AppError>) -> ()) {
-    
+    static func getShows(for searchQuery: String,completion: @escaping (Result<[Show],AppError>) -> ()) {
         
-        let showEndpointURL = "http://api.tvmaze.com/search/shows?q=girls"
-        
-        guard let url = URL(string: showEndpointURL) else {
-            completion(.failure(.badURL(showEndpointURL)))
+        let customizedEndpoint = "https://api.tvmaze.com/search/shows?q=\(searchQuery)"
+        guard let url = URL(string: customizedEndpoint) else {
+            completion(.failure(.badURL(customizedEndpoint)))
             return
         }
         
@@ -30,8 +28,8 @@ struct ShowsApiClient {
             case .success(let showData):
                 
                 do {
-                    let searchResults = try JSONDecoder().decode([Show].self, from: showData)
-                    let shows = searchResults
+                    let searchResults = try JSONDecoder().decode([ShowData].self, from: showData)
+                    let shows = searchResults.map { $0.show }
                     completion(.success(shows))
                 } catch {
                     completion(.failure(.decodingError(error)))
