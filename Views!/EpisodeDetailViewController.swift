@@ -10,21 +10,38 @@ import UIKit
 
 class EpisodeDetailViewController: UIViewController {
 
+    @IBOutlet weak var episodeImageView: UIImageView!
+    
+
+    @IBOutlet weak var episodeSummaryLabel: UITextView!
+    
+    var episodeDetails: Episodes!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       updateUI()
     }
-    
+  var word = ""
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        episodeSummaryLabel.backgroundColor = .systemIndigo
+       
+        
+        episodeSummaryLabel.text = "\(episodeDetails.summary?.dropLast(5) ?? "")"
+        episodeImageView.getImage(with: episodeDetails.image?.original ?? "") {[weak self] (result) in
+            switch result {
+            case .failure(let appError):
+            print("Error loading picture: \(appError)")
+                
+            case .success(let image):
+                
+                DispatchQueue.main.async {
+                    self?.episodeImageView.image = image
+                    }
+                }
+            }
+        }
     }
-    */
 
-}
+

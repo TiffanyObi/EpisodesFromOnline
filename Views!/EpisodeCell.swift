@@ -15,7 +15,8 @@ class EpisodeCell: UITableViewCell {
     
     func configureCell(for episode: Episodes) {
         episodeNameLabel.text = episode.name
-        episodeImageView.getImage(with: episode.image?.medium ?? "") { [weak self] (result) in
+        let image = episode.image?.medium ?? ""
+        episodeImageView.getImage(with: image) { [weak self] (result) in
            switch result {
            case .failure:
                DispatchQueue.main.async {

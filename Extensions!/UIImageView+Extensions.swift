@@ -27,16 +27,21 @@ extension UIImageView {
     let request = URLRequest(url: url)
     
     NetworkHelper.shared.performDataTask(with: request) { [weak activityIndicator] (result) in
-      DispatchQueue.main.async {
-        activityIndicator?.stopAnimating() // hides when we stop animating the indicator
-      }
       switch result {
       case .failure(let appError):
         activityIndicator?.stopAnimating()
-        completion(.failure(.networkClientError(appError)))
+        DispatchQueue.main.async {
+          activityIndicator?.stopAnimating()
+                completion(.failure(.networkClientError(appError)))
+            activityIndicator?.stopAnimating()
+        }
       case .success(let data):
         if let image = UIImage(data: data) {
+           DispatchQueue.main.async {
+             activityIndicator?.stopAnimating()
           completion(.success(image))
+            activityIndicator?.stopAnimating()
+            }
         }
       }
     }

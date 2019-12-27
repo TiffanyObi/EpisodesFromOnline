@@ -40,6 +40,15 @@ class EpisodeViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailCell = segue.destination as? EpisodeDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("could nt locate view controller")
+        }
+        
+        let episodeDetail = episodes[indexPath.row]
+        
+        detailCell.episodeDetails = episodeDetail
+    }
 }
 
 extension EpisodeViewController: UITableViewDataSource {

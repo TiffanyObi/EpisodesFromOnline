@@ -9,24 +9,28 @@
 import UIKit
 
 class ShowListCell: UITableViewCell {
-
+  
     @IBOutlet weak var showImageView: UIImageView!
     
-    @IBOutlet weak var showTitleLabel: UILabel!
+    @IBOutlet weak var showTitleLabel: UITextView!
     
     @IBOutlet weak var ratingLabel: UILabel!
     
     
     func configureCell(for show: Show) {
+        self.backgroundColor = .green
+        showTitleLabel.backgroundColor = .red
         showTitleLabel.text = show.name
-        
+       var image = ""
         ratingLabel.text = "Rating: " + "\((show.rating?.average?.description ?? "7.0"))"
         // "https" + "\(show.image?.original?.dropFirst(4) ?? "https://static.tvmaze.com/uploads/images/original_untouched/31/78286.jpg")"
         guard let imageURL = show.image?.original else {
-            self.showImageView.image = UIImage(named:"movie image")
+            showImageView.image = UIImage(named:"movie image")
             return
         }
-        showImageView.getImage(with: imageURL) { [weak self] (result) in
+        image = imageURL
+        
+        showImageView.getImage(with: image) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
